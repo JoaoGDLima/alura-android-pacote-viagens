@@ -13,7 +13,10 @@ import android.widget.TextView;
 import com.example.aluraviagens.R;
 import com.example.aluraviagens.ui.model.Pacote;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class ListaPacotesAdapter extends BaseAdapter {
 
@@ -56,10 +59,20 @@ public class ListaPacotesAdapter extends BaseAdapter {
         imagem.setImageDrawable(drawableImagemPacote);
 
         TextView dias = viewCriada.findViewById(R.id.item_pacote_dias);
-        dias.setText(pacote.getDias() + "");
+        int qtdDias = pacote.getDias();
+        String diasEmTexto = "";
+        if (qtdDias > 1) {
+            diasEmTexto = qtdDias + " dias";
+        } else {
+            diasEmTexto = qtdDias + " dia";
+        }
+
+        dias.setText(diasEmTexto);
 
         TextView preco = viewCriada.findViewById(R.id.item_pacote_preco);
-        preco.setText(pacote.getPreco().toString());
+        NumberFormat formatoBrasileiro = DecimalFormat.getCurrencyInstance(new Locale("pt", "br"));
+        String moedaBrasileira = formatoBrasileiro.format(pacote.getPreco());
+        preco.setText(moedaBrasileira);
 
         return viewCriada;
     }
