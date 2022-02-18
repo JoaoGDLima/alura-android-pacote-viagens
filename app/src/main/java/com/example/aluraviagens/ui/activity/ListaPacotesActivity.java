@@ -25,7 +25,7 @@ public class ListaPacotesActivity extends AppCompatActivity {
     }
 
     private void configuraLista() {
-        ListView listaDePacotes = findViewById(R.id.lista_pacote_listview);
+        ListView listaDePacotes = findViewById(R.id.lista_pacotes_listview);
         List<Pacote> pacotes = new PacoteDAO().lista();
         listaDePacotes.setAdapter(new ListaPacotesAdapter(pacotes, this));
     }
