@@ -1,6 +1,6 @@
-package com.example.aluraviagens.ui.dao;
+package com.example.aluraviagens.dao;
 
-import com.example.aluraviagens.ui.model.Pacote;
+import com.example.aluraviagens.model.Pacote;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

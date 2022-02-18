@@ -1,4 +1,4 @@
-package com.example.aluraviagens.ui.model;
+package com.example.aluraviagens.model;
 
 import java.math.BigDecimal;
 
