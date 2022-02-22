@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -38,8 +39,14 @@ public class ResumoPacoteActivity extends AppCompatActivity {
         mostraPreco(pacoteSaoPaulo);
         mostraData(pacoteSaoPaulo);
 
-        Intent intent = new Intent(this, PagamentoActivity.class);
-        startActivity(intent);
+        Button button = findViewById(R.id.resumo_pacote_botao_realiza_pagamento);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ResumoPacoteActivity.this, PagamentoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void mostraData(Pacote pacote) {
